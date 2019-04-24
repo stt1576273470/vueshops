@@ -34,8 +34,8 @@ export default {
   data() {
     return {
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       // 制定规则,给登录表单域制作校验规则。必须写在data里
       loginFormRules: {
@@ -54,30 +54,30 @@ export default {
       // this.$router.push('/home')
       // 对登录的form表单进行整体校验
       // validate方法是element组件库的方法  使用箭头函数因为有this指向问题
-      this.$refs.loginFormRef.validate( async valid=> {
+      this.$refs.loginFormRef.validate(async valid => {
         // valid表单校验的标志信息  true：成功   false： 失败
-        if(valid === true) {
+        if (valid === true) {
           // 跳转到后台首页
           // this.$router.push('/home')
           // 用户名和密码的真实校验
-          //     重命名                 post请求   路由地址     
-          const {data:dt} = await this.$http.post('/login',this.loginForm)
+          //     重命名                 post请求   路由地址
+          const { data: dt } = await this.$http.post('/login', this.loginForm)
           // console.log(dt);    //随意的用户名密码  打印为不存在用户名
           // 判断用户名和密码
-          if(dt.meta.status !== 200) {
+          if (dt.meta.status !== 200) {
             return this.$message.error(dt.meta.msg)
           }
           // 通过浏览器的sessionStorage记录服务器返回的token信息
-          window.sessionStorage.setItem('token',dt.data.token)
+          window.sessionStorage.setItem('token', dt.data.token)
           this.$router.push('/home')
-          console.log(dt);
+          console.log(dt)
         }
       })
     },
     reset() {
       // 重置表单数据
       // this.$refs.loginFormRef.resetField() 错误
-         this.$refs.loginFormRef.resetFields();
+      this.$refs.loginFormRef.resetFields()
     }
   }
 }
