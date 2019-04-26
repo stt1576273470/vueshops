@@ -70,7 +70,7 @@ export default {
           // 通过浏览器的sessionStorage记录服务器返回的token信息
           window.sessionStorage.setItem('token', dt.data.token)
           this.$router.push('/home')
-          console.log(dt)
+          // console.log(dt)
         }
       })
     },

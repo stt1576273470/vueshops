@@ -4,10 +4,24 @@ html,body,#app{
     padding: 0;
 }
 /* 给左侧菜单导航设置字号等样式 */
-.el-submenu__title {
+.el-submenu__title, .el-menu-item {
     font-size: 13px;
 }
+
 /* 给icon图标设置样式 */
 .iconfont {
     margin-right: 10px;
 }
+/* 
+卡片部分 
+只写一个类名不能正常显示
+*/
+.el-main .box-card{
+    margin-top:15px;
+    box-shadow: 0 1px 1px rgba(0 , 0, 0, 0.15);
+  }
+  /* 表格样式 分页样式*/
+  .el-table, .el-pagination {
+      margin-top: 15px;
+      font-size: 12px;
+  }
