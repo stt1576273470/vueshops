@@ -34,6 +34,7 @@
           <el-button type="primary" @click="tianjia">确 定</el-button>
         </span>
       </el-dialog>
+<<<<<<< HEAD
       <!-- 修改用户弹出层 -->
       <el-dialog
         title="修改用户信息"
@@ -57,6 +58,8 @@
           <el-button type="primary" @click="xiugai()">确 定</el-button>
         </span>
       </el-dialog>
+=======
+>>>>>>> c788646191cc986ad7530508d985eb422ef383f7
     </el-breadcrumb>
     <!-- 卡片部分 -->
     <el-card class="box-card">
@@ -96,6 +99,7 @@
         <el-table-column label="操作">
           <template slot-scope="info">
             <!--slot-scope="info" 作用域插槽-->
+<<<<<<< HEAD
             <!-- 修改按钮 -->
             <el-button
               type="primary"
@@ -104,13 +108,19 @@
               @click="showEditDialog(info.row.id)"
             ></el-button>
             <!-- 删除按钮 -->
+=======
+            <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
+>>>>>>> c788646191cc986ad7530508d985eb422ef383f7
             <el-button
               type="danger"
               icon="el-icon-delete"
               size="mini"
               @click="delUser(info.row.id)"
             ></el-button>
+<<<<<<< HEAD
             <!-- 分配角色按钮 -->
+=======
+>>>>>>> c788646191cc986ad7530508d985eb422ef383f7
             <el-tooltip
               class="item"
               effect="dark"
@@ -199,7 +209,11 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
+<<<<<<< HEAD
       }).then(async () => {
+=======
+      }).then(async() => {
+>>>>>>> c788646191cc986ad7530508d985eb422ef383f7
         // 实现删除的代码
         // console.log(id)
         const { data: dt } = await this.$http.delete('users/' + id)
@@ -214,6 +228,7 @@ export default {
         }
         this.getUserList()
       })
+<<<<<<< HEAD
     },
     // 修改用户信息
     xiugai() {
@@ -245,6 +260,8 @@ export default {
       this.editUser = dt.data
       // 显示对话框
       this.editUserDialog = true
+=======
+>>>>>>> c788646191cc986ad7530508d985eb422ef383f7
     }
   },
   data() {
@@ -260,6 +277,7 @@ export default {
       callback()
     }
     return {
+<<<<<<< HEAD
       editUser: {
         username: '',
         mobile: '',
@@ -273,6 +291,8 @@ export default {
           { validator: checkMobile, trigger: 'blur' }
         ]
       },
+=======
+>>>>>>> c788646191cc986ad7530508d985eb422ef383f7
       // 用户数据列表显示
       //   数据列表
       userlist: [],
